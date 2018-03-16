@@ -224,7 +224,9 @@ class videoloop(observer.observer, observable.observable):
                 # Observe videoloop events
                 self.addObserver(self)
                 # Analyze only ~3 FPS which works well with this type of detection
-                frameToCheck = int(self.fps / 4)
+                # JY Note: I am disabling this because I want to create a smooth video for marketing purposes
+                # frameToCheck = int(self.fps / 4)
+                frameToCheck = 0
                 # 0 means check every frame
                 if frameToCheck < 1:
                     frameToCheck = 0
