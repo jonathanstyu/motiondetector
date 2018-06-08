@@ -96,7 +96,10 @@ class motiondet(detectbase.detectbase):
                     movementLocationsFiltered.append(r)
         if self.appConfig.camera['mark']:
             # Draw rectangle around found objects
-            self.markRectSize(image, movementLocationsFiltered, (0, 255, 0), 2)
+
+            # JY NOTE: I modified the color and the size here. 
+            # Calculate by subtracting the desired color by 255 255 255
+            self.markRectSize(image, movementLocationsFiltered, (0,115,255), 2)
         # Motion start stop events
         if self.motionDetected:
             if motionPercent <= self.appConfig.motion['stopThreshold']:

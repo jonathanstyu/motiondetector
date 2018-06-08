@@ -60,4 +60,5 @@ class detectbase(observable.observable):
             else:
                 y2 = y2 - 2
             # Show width and height of full size image
-            cv2.putText(image, label, (x2, y2), cv2.FONT_HERSHEY_PLAIN, 1.0, (255, 255, 255), thickness=1, lineType=cv2.LINE_AA)
+            # JY Notes: i am disablingn this because i don't want the location
+            # cv2.putText(image, label, (x2, y2), cv2.FONT_HERSHEY_PLAIN, 1.0, (255, 255, 255), thickness=1, lineType=cv2.LINE_AA)

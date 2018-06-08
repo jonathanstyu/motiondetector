@@ -226,7 +226,7 @@ class videoloop(observer.observer, observable.observable):
                 # Analyze only ~3 FPS which works well with this type of detection
                 # JY Note: I am disabling this because I want to create a smooth video for marketing purposes
                 # frameToCheck = int(self.fps / 4)
-                frameToCheck = 0
+                frameToCheck = 0 
                 # 0 means check every frame
                 if frameToCheck < 1:
                     frameToCheck = 0
@@ -277,8 +277,9 @@ class videoloop(observer.observer, observable.observable):
                     # Buffer oldest frame
                     self.historyBuf.append(self.frameBuf[0])
                     # Toss oldest history frame
-                    if len(self.historyBuf) > self.fps:
-                        self.historyBuf.pop(0)
+                    # JY NOTE: Because we are running a video through this, I am changing this - we want each frame that the video processes. 
+                    # if len(self.historyBuf) > self.fps:
+                    #     self.historyBuf.pop(0)
                     # Toss oldest frame
                     self.frameBuf.pop(0)
                     # Skip frames until skip count <= 0
