@@ -99,7 +99,7 @@ class motiondet(detectbase.detectbase):
 
             # JY NOTE: I modified the color and the size here. 
             # Calculate by subtracting the desired color by 255 255 255
-            self.markRectSize(image, movementLocationsFiltered, (0,115,255), 2)
+            self.markRectSize(image, movementLocationsFiltered, (51,255,255), 3)
         # Motion start stop events
         if self.motionDetected:
             if motionPercent <= self.appConfig.motion['stopThreshold']:
